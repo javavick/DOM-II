@@ -218,9 +218,9 @@ introParagraph.addEventListener("mouseleave", (event) => {
 /*========== Top ==========*/
 
 // h2
-let topHeading = document.querySelector(".content-section h2");
+let topHeading = document.querySelectorAll(".content-section h2");
 
-topHeading.addEventListener("mouseenter", (event) => {
+topHeading[0].addEventListener("mouseenter", (event) => {
   event.target.textContent = "Get Out!";
   event.target.style.color = "crimson";
   logoHeading.style.color = "white";
@@ -231,8 +231,31 @@ topHeading.addEventListener("mouseenter", (event) => {
     atr.style.color = "white";
   });
 });
-topHeading.addEventListener("mouseleave", (event) => {
+topHeading[0].addEventListener("mouseleave", (event) => {
   event.target.textContent = "Let's Go!";
+  event.target.style.removeProperty("color");
+  logoHeading.style.removeProperty("color");
+  navHeader.style.removeProperty("background-color");
+  body.style.removeProperty("background-color");
+  body.style.removeProperty("color");
+  navAnchors.forEach((atr) => {
+    atr.style.removeProperty("color");
+  });
+});
+
+topHeading[1].addEventListener("mouseenter", (event) => {
+  event.target.textContent = "Murder Awaits";
+  event.target.style.color = "crimson";
+  logoHeading.style.color = "white";
+  navHeader.style.backgroundColor = "black";
+  body.style.backgroundColor = "black";
+  body.style.color = "white";
+  navAnchors.forEach((atr) => {
+    atr.style.color = "white";
+  });
+});
+topHeading[1].addEventListener("mouseleave", (event) => {
+  event.target.textContent = "Adventure Awaits";
   event.target.style.removeProperty("color");
   logoHeading.style.removeProperty("color");
   navHeader.style.removeProperty("background-color");
@@ -246,10 +269,66 @@ topHeading.addEventListener("mouseleave", (event) => {
 // Paragraphs
 let topParagraphs = document.querySelectorAll(".content-section p");
 
-topParagraphs[0].addEventListener("mouseenter", (event) => {
-  event.target.textContent =
-    "Murder death destruction, dirty disgusting vlogger dirty nasty slaughter despair stab. Kill destroy lego, travelvlogger self-deprecating abysmal damage fail evil callous apocalypse creepy.";
-  event.target.style.color = "crimson";
+topParagraphs.forEach((atr) => {
+  if (atr === topParagraphs[0] || atr === topParagraphs[2]) {
+    atr.addEventListener("mouseenter", (event) => {
+      event.target.textContent =
+        "Murder death destruction, dirty disgusting vlogger dirty nasty slaughter despair stab. Kill destroy lego, travelvlogger self-deprecating abysmal damage fail evil callous apocalypse creepy.";
+      event.target.style.color = "crimson";
+      logoHeading.style.color = "white";
+      navHeader.style.backgroundColor = "black";
+      body.style.backgroundColor = "black";
+      body.style.color = "white";
+      navAnchors.forEach((atr) => {
+        atr.style.color = "white";
+      });
+    });
+    atr.addEventListener("mouseleave", (event) => {
+      event.target.textContent =
+        "Adventure webdesign pretty design design, excursion cute WordPress blogger design webdesign adventure. Pretty simple traveling fun WordPress wanderlust darn simple organized.";
+      event.target.style.removeProperty("color");
+      logoHeading.style.removeProperty("color");
+      navHeader.style.removeProperty("background-color");
+      body.style.removeProperty("background-color");
+      body.style.removeProperty("color");
+      navAnchors.forEach((atr) => {
+        atr.style.removeProperty("color");
+      });
+    });
+  } else {
+    atr.addEventListener("mouseenter", (event) => {
+      event.target.textContent =
+        "Murder death destruction, dirty disgusting vlogger dirty nasty slaughter despair stab kill destroy lego tomatoes fart.";
+      event.target.style.color = "crimson";
+      logoHeading.style.color = "white";
+      navHeader.style.backgroundColor = "black";
+      body.style.backgroundColor = "black";
+      body.style.color = "white";
+      navAnchors.forEach((atr) => {
+        atr.style.color = "white";
+      });
+    });
+    atr.addEventListener("mouseleave", (event) => {
+      event.target.textContent =
+        "Expedition colorful design simple excursion blogger blogger design WordPress design, design organized website theme.";
+      event.target.style.removeProperty("color");
+      logoHeading.style.removeProperty("color");
+      navHeader.style.removeProperty("background-color");
+      body.style.removeProperty("background-color");
+      body.style.removeProperty("color");
+      navAnchors.forEach((atr) => {
+        atr.style.removeProperty("color");
+      });
+    });
+  }
+});
+
+// Images
+
+let topImages = document.querySelectorAll(".img-content img");
+
+topImages[0].addEventListener("mouseenter", (event) => {
+  event.target.setAttribute("src", "img/adventure2.jpg");
   logoHeading.style.color = "white";
   navHeader.style.backgroundColor = "black";
   body.style.backgroundColor = "black";
@@ -258,10 +337,29 @@ topParagraphs[0].addEventListener("mouseenter", (event) => {
     atr.style.color = "white";
   });
 });
-topParagraphs[0].addEventListener("mouseleave", (event) => {
-  event.target.textContent =
-    "Adventure webdesign pretty design design, excursion cute WordPress blogger design webdesign adventure. Pretty simple traveling fun WordPress wanderlust darn simple organized.";
-  event.target.style.removeProperty("color");
+topImages[0].addEventListener("mouseleave", (event) => {
+  event.target.setAttribute("src", "img/adventure.jpg");
+  logoHeading.style.removeProperty("color");
+  navHeader.style.removeProperty("background-color");
+  body.style.removeProperty("background-color");
+  body.style.removeProperty("color");
+  navAnchors.forEach((atr) => {
+    atr.style.removeProperty("color");
+  });
+});
+
+topImages[1].addEventListener("mouseenter", (event) => {
+  event.target.setAttribute("src", "img/fun2.jpg");
+  logoHeading.style.color = "white";
+  navHeader.style.backgroundColor = "black";
+  body.style.backgroundColor = "black";
+  body.style.color = "white";
+  navAnchors.forEach((atr) => {
+    atr.style.color = "white";
+  });
+});
+topImages[1].addEventListener("mouseleave", (event) => {
+  event.target.setAttribute("src", "img/fun.jpg");
   logoHeading.style.removeProperty("color");
   navHeader.style.removeProperty("background-color");
   body.style.removeProperty("background-color");
