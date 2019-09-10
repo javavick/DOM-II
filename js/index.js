@@ -2,6 +2,7 @@
 
 // Variables
 let body = document.querySelector("body");
+let footer = document.querySelector("footer");
 
 // Functions
 function darkStyling() {
@@ -10,6 +11,10 @@ function darkStyling() {
   navHeader.style.backgroundColor = "black";
   body.style.backgroundColor = "black";
   body.style.color = "white";
+  footer.style.borderTop = "2px dashed white";
+  footer.style.background = "black";
+  footerParagraph.style.backgroundColor = "black";
+  footerParagraph.style.color = "white";
 }
 
 function navAnchorsDark() {
@@ -27,6 +32,10 @@ function defaultStyling() {
   navAnchors.forEach((atr) => {
     atr.style.removeProperty("color");
   });
+  footer.style.removeProperty("border-top");
+  footer.style.removeProperty("background");
+  footerParagraph.style.removeProperty("background-color");
+  footerParagraph.style.removeProperty("color");
 }
 
 /*==================== NAV ====================*/
@@ -351,4 +360,20 @@ pickButtons.forEach((atr) => {
     event.target.style.removeProperty("background-color");
     event.target.textContent = "Sign Me Up!";
   });
+});
+
+/*==================== FOOTER ====================*/
+
+// Paragraph
+let footerParagraph = document.querySelector("footer p");
+
+footerParagraph.addEventListener("mouseenter", (event) => {
+  event.target.textContent = "Copyright Beelzebub 0000";
+  darkStyling();
+  navAnchorsDark();
+  event.target.style.color = "crimson";
+});
+footerParagraph.addEventListener("mouseleave", (event) => {
+  event.target.textContent = "Copyright Fun Bus 2018";
+  defaultStyling();
 });
