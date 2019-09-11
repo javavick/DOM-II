@@ -268,6 +268,9 @@ topImages[1].addEventListener("mouseleave", event => {
   event.target.setAttribute("src", "img/fun.jpg");
   defaultStyling();
 });
+topImages[1].addEventListener("dblclick", event => {
+  window.alert("You're a dummy.");
+});
 
 /*========== Middle ==========*/
 
