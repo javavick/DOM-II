@@ -10,6 +10,9 @@ script.setAttribute(
 let head = document.querySelector("head");
 head.appendChild(script);
 
+let title = document.querySelector("title");
+title.textContent = "Fun Bus Travel Agency";
+
 let allImages = document.querySelectorAll("img");
 let body = document.querySelector("body");
 let footer = document.querySelector("footer");
