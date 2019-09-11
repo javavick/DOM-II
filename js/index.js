@@ -1,6 +1,7 @@
 /*==================== GLOBAL ====================*/
 
 // Variables
+let allImages = document.querySelectorAll("img");
 let body = document.querySelector("body");
 let footer = document.querySelector("footer");
 
@@ -65,10 +66,13 @@ body.addEventListener("wheel", event => {
     );
   }
 });
-body.addEventListener("contextmenu", event => {
-  window.alert(
-    "Yessssss. Save that photo. There's no malware hidden in it. Nope. None at all."
-  );
+
+allImages.forEach(atr => {
+  atr.addEventListener("contextmenu", event => {
+    window.alert(
+      "Yessssss. Save that photo. There's no malware hidden in it. Nope. None at all."
+    );
+  });
 });
 
 /*==================== NAV ====================*/
