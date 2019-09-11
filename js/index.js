@@ -4,6 +4,8 @@
 let body = document.querySelector("body");
 let footer = document.querySelector("footer");
 
+let inc = 0;
+
 // Functions
 function darkStyling() {
   event.target.style.color = "crimson";
@@ -42,6 +44,11 @@ function defaultStyling() {
 body.addEventListener("keypress", event => {
   window.alert("Loser.");
 });
+body.addEventListener("wheel", event => {
+  window.alert("Stop scrolling and get out!");
+});
+
+// If..Else
 
 /*==================== NAV ====================*/
 
@@ -123,6 +130,12 @@ navAnchors[3].addEventListener("mouseenter", event => {
 navAnchors[3].addEventListener("mouseleave", event => {
   event.target.textContent = "Contact";
   defaultStyling();
+});
+
+navAnchors.forEach(atr => {
+  atr.addEventListener("click", event => {
+    event.preventDefault();
+  });
 });
 
 /*==================== INTRO ====================*/
@@ -365,7 +378,7 @@ pickButtons.forEach(atr => {
     event.target.style.removeProperty("background-color");
     event.target.textContent = "Sign Me Up!";
   });
-});
+  
 
 /*==================== FOOTER ====================*/
 
