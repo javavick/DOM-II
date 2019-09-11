@@ -74,7 +74,7 @@ window.addEventListener("scroll", event => {
 });
 
 body.addEventListener("keypress", event => {
-  window.alert("No.");
+  window.alert("You're so annoying.");
 });
 body.addEventListener("wheel", event => {
   inc++;
