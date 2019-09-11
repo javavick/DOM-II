@@ -41,6 +41,12 @@ function defaultStyling() {
 }
 
 // Event Listeners
+window.addEventListener("load", event => {
+  window.alert(
+    "Omg!!! Hi!! Welcome! How have y—Wait... Ugh, it's you. What do you want? You know what, I don't care, just... Just get out."
+  );
+});
+
 body.addEventListener("keypress", event => {
   window.alert("Loser.");
 });
