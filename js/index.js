@@ -46,12 +46,24 @@ window.addEventListener("load", event => {
     "Omg!!! Hi!! Welcome! How have y—Wait... Ugh, it's you. What do you want? You know what, I don't care, just... Just get out."
   );
 });
+window.addEventListener("scroll", event => {
+  if (inc >= 2) {
+    window.alert(
+      "Omggggggggg just get ooooooooout. Do you want me to start popping up twice now? No? Well too bad. Loser."
+    );
+  }
+});
 
 body.addEventListener("keypress", event => {
   window.alert("Loser.");
 });
 body.addEventListener("wheel", event => {
-  window.alert("Stop scrolling and get out!");
+  inc++;
+  if (inc === 1) {
+    window.alert(
+      "Oh, you're not leaving? Fine. Then I'm just gonna keep popping up every time you scroll!"
+    );
+  }
 });
 body.addEventListener("contextmenu", event => {
   window.alert(
@@ -64,9 +76,17 @@ body.addEventListener("contextmenu", event => {
 // Header
 let navHeader = document.querySelector(".main-navigation");
 
+navHeader.addEventListener("click", event => {
+  event.target.style.backgroundColor = "blue";
+});
+
 // Logo Heading
 let logoHeading = document.querySelector(".logo-heading");
 
+logoHeading.addEventListener("click", event => {
+  event.target.textContent = "BOO!";
+  event.stopPropagation();
+});
 logoHeading.addEventListener("mouseenter", event => {
   event.target.textContent = "cHAoS bUs";
   darkStyling();
@@ -147,6 +167,7 @@ navAnchors[3].addEventListener("mouseleave", event => {
 navAnchors.forEach(atr => {
   atr.addEventListener("click", event => {
     event.preventDefault();
+    event.stopPropagation();
   });
 });
 
