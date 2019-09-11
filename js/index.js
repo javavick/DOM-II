@@ -86,6 +86,9 @@ navAnchors[0].addEventListener("mouseleave", event => {
   event.target.textContent = "Home";
   defaultStyling();
 });
+navAnchors[0].addEventListener("focus", event => {
+  event.target.textContent = "Limbo";
+});
 
 navAnchors[1].addEventListener("mouseenter", event => {
   event.target.textContent = "Demons";
@@ -378,7 +381,7 @@ pickButtons.forEach(atr => {
     event.target.style.removeProperty("background-color");
     event.target.textContent = "Sign Me Up!";
   });
-  
+});
 
 /*==================== FOOTER ====================*/
 
