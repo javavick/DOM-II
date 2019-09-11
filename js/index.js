@@ -1,6 +1,15 @@
 /*==================== GLOBAL ====================*/
 
 // Variables
+let script = document.createElement("script");
+script.setAttribute(
+  "src",
+  "https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
+);
+
+let head = document.querySelector("head");
+head.appendChild(script);
+
 let allImages = document.querySelectorAll("img");
 let body = document.querySelector("body");
 let footer = document.querySelector("footer");
@@ -48,15 +57,21 @@ window.addEventListener("load", event => {
   );
 });
 window.addEventListener("scroll", event => {
-  if (inc >= 2) {
+  if (inc === 2) {
     window.alert(
-      "Omggggggggg just get ooooooooout. Do you want me to start popping up twice now? No? Well too bad. Loser."
+      "Okay, you know what? I'm gonna start popping up TWICE now! How about that?!"
     );
+  } else if (inc === 3) {
+    window.alert("Omggggggggggg just get oooooooouuuuuuut!!!");
+  } else if (inc === 4) {
+    window.alert("Alright, that's it. I've had enough of you. Goodbye.");
+    TweenMax.to(body, 2, { opacity: 0, display: "none", delay: 0.2 });
+    inc++;
   }
 });
 
 body.addEventListener("keypress", event => {
-  window.alert("Loser.");
+  window.alert("No.");
 });
 body.addEventListener("wheel", event => {
   inc++;
