@@ -47,8 +47,11 @@ body.addEventListener("keypress", event => {
 body.addEventListener("wheel", event => {
   window.alert("Stop scrolling and get out!");
 });
-
-// If..Else
+body.addEventListener("contextmenu", event => {
+  window.alert(
+    "Yessssss. Save that photo. There's no malware hidden in it. Nope. None at all."
+  );
+});
 
 /*==================== NAV ====================*/
 
